@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Cart</title>
+</head>
+<body>
+    <div class="cart">
+        <h1>
+            Корзина
+        </h1>
+        <div class="manage-buttons">
+            <button class="clear-btn" type="button">
+                Очистить корзину
+            </button>
+            <button class="submit-btn" type="submit">
+                Оформить заказ
+            </button>
+        </div>
+        <div class="cart-products">
+        </div>
+        <h4>Общая стоимость: <strong class="overall-cost">0$</strong></h4>
+    </div>
+    <div class="products">
+        <h1>
+            Товары
+        </h1>
+        <div class="product-list">
+            <div class="product">
+                <img src="https://clipartix.com/wp-content/uploads/2018/03/orange-clipart-2018-2.png" class="product-photo" alt="orange">
+                <h2 class="product-name">Orange</h2>
+                <h4 class="product-cost">12</h5>
+                <input type="number" value="1" min="1" class="product-count">
+                <br>
+                <button type="button" class="add-to-cart">В корзину</button>
+            </div>
+            <div class="product">
+                <img src="https://www.freeiconspng.com/thumbs/apple-png/red-fresh-shiny-apple-png-0.png" alt="apple" class="product-photo">
+                <h2 class="product-name">Apple</h2>
+                <h4 class="product-cost">10</h5>
+                <input type="number" value="1" min="1" class="product-count">
+                <br>
+                <button type="button" class="add-to-cart">В корзину</button>
+            </div>
+            <div class="product">
+                <img src="https://billsberryfarm.com/wp-content/uploads/2020/08/peach.png" alt="peach" class="product-photo">
+                <h2 class="product-name">Peach</h2>
+                <h4 class="product-cost">15</h5>
+                <input type="number" value="1" min="1" class="product-count">
+                <br>
+                <button type="button" class="add-to-cart">В корзину</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

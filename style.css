@@ -1,0 +1,159 @@
+html
+{
+    min-width: 700px;
+}
+
+*
+{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin:0;
+    padding:0;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+    font-weight: lighter;
+}
+
+.product-photo
+{
+    width:200px;
+}
+
+.cart
+{
+    float:left;
+    width:40%;
+}
+
+.products
+{
+    width:50%;
+    margin-left:50%;
+}
+
+.manage-buttons
+{
+    display:flex;
+    justify-content: space-between;
+}
+
+.product
+{
+    display:inline-block;
+    margin: 0 20px;
+}
+
+.product-count
+{
+    width:100%;
+}
+
+.add-to-cart
+{
+    margin:10px 0;
+} 
+
+.add-to-cart, .submit-btn
+{
+    border-radius: 0;
+    background-color: #018BB7;
+    color:white;
+    transition: background-color .2s;
+    border:0px;
+    padding:10px 15px;
+    cursor: pointer;
+}
+
+h1
+{
+    padding: 20px;
+}
+
+.cart>div,h4
+{
+    margin: 20px 10px;
+}
+
+.submit-btn
+{
+    padding:10px 50px;
+    width:200px;
+}
+
+.clear-btn
+{
+    background-color: lightgray;
+    border-radius: 0;
+    border:0;
+    padding:10px 50px;
+    cursor: pointer;
+    transition: background-color .2s;
+    width:200px;
+    white-space: nowrap;
+}
+
+.clear-btn:hover
+{
+    background-color: silver;
+}
+
+.add-to-cart:hover, .submit-btn:hover
+{
+    background-color: #4BAECE;
+}
+
+.remove-product::before
+{
+    content:'';
+    display:inline-block;
+    width:5px;
+    height:5px;
+    border-top: 1px solid black;
+    border-left:1px solid black;
+    transform: rotate(-135deg);
+    position: relative;
+    left:6px;
+    top:0px;
+}
+
+.remove-product::after
+{
+    content:'';
+    display: inline-block;
+    width:5px;
+    height:5px;
+    border-bottom: 1px solid black;
+    border-right:1px solid black;
+    transform: rotate(-135deg);
+    position: relative;
+    top:7px;
+    left:0px;
+}
+
+.remove-product
+{
+    cursor: pointer;
+    margin:10px;
+}
+
+.cart-product-count-cost
+{
+    width:100%;
+    margin:5px 10px;
+    background-color: #F0F0F0;
+    padding:10px;
+}
+
+.cart-product-count-cost>*
+{
+    margin:10px 0;
+}
+
+.overall-cost-count
+{
+    background-color: #0289C0;
+    color:white;
+    display:inline-block;
+    padding:5px;
+}
