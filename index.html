@@ -8,52 +8,87 @@
     <title>Cart</title>
 </head>
 <body>
-    <div class="cart">
-        <h1>
-            Корзина
-        </h1>
-        <div class="manage-buttons">
-            <button class="clear-btn" type="button">
-                Очистить корзину
-            </button>
-            <button class="submit-btn" type="submit">
-                Оформить заказ
-            </button>
+    <div class="cart-products-container">
+        <div class="cart">
+            <h1>
+                Корзина
+            </h1>
+            <div class="manage-buttons">
+                <button class="clear-btn" type="button">
+                    Очистить корзину
+                </button>
+                <a href="#regForm" id="regLink">
+                    <button class="submit-btn" type="button">
+                        Оформить заказ
+                    </button>
+                </a>
+            </div>
+            <div class="cart-products">
+            </div>
+            <h4>Общая стоимость: <strong class="overall-cost">0$</strong></h4>
         </div>
-        <div class="cart-products">
+        <div class="products">
+            <h1>
+                Товары
+            </h1>
+            <div class="product-list">
+                <div class="product">
+                    <img src="https://clipartix.com/wp-content/uploads/2018/03/orange-clipart-2018-2.png" class="product-photo" alt="orange">
+                    <h2 class="product-name">Orange</h2>
+                    <h4 class="product-cost">12</h5>
+                    <input type="number" value="1" min="1" class="product-count">
+                    <br>
+                    <button type="button" class="add-to-cart">В корзину</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.freeiconspng.com/thumbs/apple-png/red-fresh-shiny-apple-png-0.png" alt="apple" class="product-photo">
+                    <h2 class="product-name">Apple</h2>
+                    <h4 class="product-cost">10</h5>
+                    <input type="number" value="1" min="1" class="product-count">
+                    <br>
+                    <button type="button" class="add-to-cart">В корзину</button>
+                </div>
+                <div class="product">
+                    <img src="https://billsberryfarm.com/wp-content/uploads/2020/08/peach.png" alt="peach" class="product-photo">
+                    <h2 class="product-name">Peach</h2>
+                    <h4 class="product-cost">15</h5>
+                    <input type="number" value="1" min="1" class="product-count">
+                    <br>
+                    <button type="button" class="add-to-cart">В корзину</button>
+                </div>
+            </div>
         </div>
-        <h4>Общая стоимость: <strong class="overall-cost">0$</strong></h4>
     </div>
-    <div class="products">
-        <h1>
-            Товары
-        </h1>
-        <div class="product-list">
-            <div class="product">
-                <img src="https://clipartix.com/wp-content/uploads/2018/03/orange-clipart-2018-2.png" class="product-photo" alt="orange">
-                <h2 class="product-name">Orange</h2>
-                <h4 class="product-cost">12</h5>
-                <input type="number" value="1" min="1" class="product-count">
-                <br>
-                <button type="button" class="add-to-cart">В корзину</button>
+    <div class="form-container">
+        <form id="regForm" name="regForm">
+            <h1>Checkout:</h1>
+
+            <div class="tab1">Name:
+                <p><input type="text" name="firstname" required placeholder="First name..."></p>
+                <p><input type="text" name="lastname" required placeholder="Last name..."></p>
             </div>
-            <div class="product">
-                <img src="https://www.freeiconspng.com/thumbs/apple-png/red-fresh-shiny-apple-png-0.png" alt="apple" class="product-photo">
-                <h2 class="product-name">Apple</h2>
-                <h4 class="product-cost">10</h5>
-                <input type="number" value="1" min="1" class="product-count">
-                <br>
-                <button type="button" class="add-to-cart">В корзину</button>
+            
+            <div class="tab2">Contact Info:
+                <p><input type="email" required name="email" placeholder="E-mail..."></p>
+                <p><input type="tel" name="phone" pattern="380[0-9]{9}" required placeholder="Phone..."></p>
             </div>
-            <div class="product">
-                <img src="https://billsberryfarm.com/wp-content/uploads/2020/08/peach.png" alt="peach" class="product-photo">
-                <h2 class="product-name">Peach</h2>
-                <h4 class="product-cost">15</h5>
-                <input type="number" value="1" min="1" class="product-count">
-                <br>
-                <button type="button" class="add-to-cart">В корзину</button>
+            
+            <div class="tab3">Payment:
+                <p><input type="radio" required id="cash" name="payment" value="cash"><label for="cash">Cash</label></p>
+                <p><input type="radio" required id="non-cash" name="payment" value="non-cash"><label for="non-cash">Non-Cash</label></p>
             </div>
-        </div>
+            
+            <div class="step-indexer">
+                <span class="step step-current"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+            </div>
+
+            <div class="nav-btns">
+                <button type="button" id="prevBtn">Previous</button>
+                <button type="button" id="nextBtn">Next</button>
+            </div>
+        </form>
     </div>
 </body>
 <script src="script.js"></script>

@@ -20,22 +20,10 @@ h1,h2,h3,h4,h5,h6
     width:200px;
 }
 
-.cart
-{
-    float:left;
-    width:40%;
-}
-
-.products
-{
-    width:50%;
-    margin-left:50%;
-}
-
 .manage-buttons
 {
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .product
@@ -156,4 +144,84 @@ h1
     color:white;
     display:inline-block;
     padding:5px;
+}
+
+#regLink
+{
+    text-decoration: none;
+    color:white;
+}
+
+.step-indexer
+{
+    text-align: center;
+    margin-top: 10px;;
+}
+
+.step 
+{
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: green;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.step-current
+{
+    opacity:1;
+}
+
+.form-container
+{
+    padding:20px;
+}
+
+#regForm input:not([type=radio])
+{
+    width:100%;
+    margin: 10px 0;
+    padding:10px;
+    box-sizing: border-box;
+}
+
+.tab2
+{
+    display:none;
+}
+
+.tab3
+{
+    display:none;
+}
+
+.nav-btns
+{
+    float:right;
+}
+
+.nav-btns>button
+{
+    border:none;
+    border-radius:0;
+    background-color:#078EB9;
+    color:white;
+    padding:10px;
+    transition:.2s;
+    cursor: pointer;
+    margin:0 10px;
+}
+
+.nav-btns>button:hover
+{
+    background-color:cadetblue;
+}
+
+.cart-products-container
+{
+    display:flex;
+    justify-content: space-around;
 }

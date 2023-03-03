@@ -1,3 +1,5 @@
+let currentStep = 1;
+
 function Product(element)
 {
     const children = element.parentNode.childNodes;
@@ -51,3 +53,93 @@ document.querySelector('.clear-btn').addEventListener('click',(e)=>
         close_arr[index--].click();
     }
 });
+
+document.querySelector('#nextBtn').addEventListener('click', async (e)=>
+{
+    if(product_arr.length === 0)
+    {
+        alert('You did\'t order anything yet.');
+        return;
+    }
+    if(currentStep === 1)
+    {
+        if(document.forms.regForm.firstname.validity.valid === false)
+        {
+            document.forms.regForm.firstname.reportValidity();
+            return;
+        }
+        if(document.forms.regForm.lastname.checkValidity() === false)
+        {
+            document.forms.regForm.lastname.reportValidity();
+            return;
+        }
+    }
+    else if(currentStep === 2)
+    {
+        if(document.forms.regForm.phone.validity.valid === false)
+        {
+            document.forms.regForm.phone.reportValidity();
+            return;
+        }
+        if(document.forms.regForm.email.validity.valid === false)
+        {
+            document.forms.regForm.email.reportValidity();
+            return;
+        }
+    }
+    else if(currentStep === 3)
+    {
+        if(document.forms.regForm.payment.value.length === 0)
+        {
+            alert('Choose payment method!');
+            return;
+        }
+    }
+    document.querySelector(`.tab${currentStep++}`).style.display = 'none';
+    const currtab = document.querySelector(`.tab${currentStep}`);
+    const temp = document.querySelector('.step-current').nextElementSibling;
+    document.querySelector('.step-current').classList.remove('step-current');
+    if(temp !== null)
+        temp.classList.add('step-current');
+    if(currtab !== null)
+        currtab.style.display = 'block';
+    if(currentStep === 4)
+    {
+        const formdata = new FormData(document.forms.regForm);
+        formdata.append('cart', JSON.stringify(product_arr));
+        const resp = await SendData('post', 'https://keli.com.ua/mail/form.php', formdata);
+        if(resp.result === 'ok')
+        {
+            alert('Thank you for buying!');
+        }
+        else
+        {
+            alert('Error!');
+        }
+        currentStep = 1;
+        document.querySelector(`.tab1`).style.display = 'block';
+        document.querySelector(`.step:first-child`).classList.add('step-current');
+    }
+});
+
+
+async function SendData(method, url, data)
+{
+    return new Promise((resolve, reject) =>
+    {
+        const xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.onloadend = (e)=>
+        {
+            resolve(JSON.parse(xhr.response));
+        }
+        try{
+        xhr.send(data);
+        }
+        catch{
+            reject();
+        }
+    });
+}
+
+
